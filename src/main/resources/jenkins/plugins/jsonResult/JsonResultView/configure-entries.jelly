@@ -2,6 +2,10 @@
 	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
 	xmlns:i="jelly:fmt">
 
+	<f:entry title="${%Name for the jsonp value}" field="title">
+		<f:textbox id="jsonResult.title" name="title"/>
+	</f:entry>
+
 	<f:entry title="${%Filter the jobs listed by regexp}" field="regexp">
 		<f:textbox id="jsonResult.regexp" name="regexp"/>
 	</f:entry>

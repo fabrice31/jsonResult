@@ -9,12 +9,12 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>TotalScreen</artifactId>
-  <version>0.0.1</version>
+  <artifactId>JsonResult</artifactId>
+  <version>0.1.0</version>
 
   <packaging>hpi</packaging>
 
-  <name>TotalScreen json</name>
+  <name>JsonResult</name>
   <developers>
     <developer>
       <id>Fabrice</id>

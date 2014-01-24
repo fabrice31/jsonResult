@@ -41,7 +41,7 @@ public class JsonResultView extends ListView {
 
     @Override
     public String getDisplayName() {
-      return "jsonResult";
+		return "jsonResult";
     }
 
   }
@@ -63,12 +63,13 @@ public class JsonResultView extends ListView {
 		super.submit(req);
 
 		this.regexp = req.getParameter("regexp");
+		this.title = req.getParameter("title");
 	}
 
 
 	public String getResults() {
 		String pattern = this.regexp;
-		String json = "{ \"tests\": [";
+		String json = ""+ this.title +"({ \"tests\": [";
 
 		// listing all jobs
 		Hudson hudson = Hudson.getInstance();
@@ -124,7 +125,7 @@ public class JsonResultView extends ListView {
 		json = json.substring(0, json.length()-1);
 		
 		// end json
-		json += "]}";
+		json += "]});";
 		return json;
 	}
 
