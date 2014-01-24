@@ -1,0 +1,12 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+	xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
+	xmlns:i="jelly:fmt">
+
+	<f:entry title="${%Filter the jobs listed by regexp}" field="regexp">
+		<f:textbox id="jsonResult.regexp" name="regexp"/>
+	</f:entry>
+	
+
+
+</j:jelly>
+
