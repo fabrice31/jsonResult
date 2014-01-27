@@ -70,15 +70,20 @@ public class JsonResultView extends ListView {
 	public String getResults() {
 		String pattern = this.regexp;
 		String json = ""+ this.title +"({ \"tests\": [";
+		Hudson hudson = Hudson.getInstance();
 
 		// listing all jobs
-		Hudson hudson = Hudson.getInstance();
         List<Job> jobs = hudson.getAllItems(Job.class);
 		for(Job job:jobs) {
 			// filtering by regexp
 			if (job.getName().toString().matches(pattern)) {
 				// Name of the job
 				json += "{ \"name\": \"" + job.getName().toString() + "\",";
+
+				// queue jobs
+				if (job.isInQueue()) {
+					json += "\"queue\" : \"true\",";
+				}
 				
 				// status and count
 				if (job.getLastBuild() != null) {
