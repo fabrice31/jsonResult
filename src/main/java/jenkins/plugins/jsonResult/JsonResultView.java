@@ -87,7 +87,7 @@ public class JsonResultView extends ListView {
 				
 				// status and count
 				if (job.getLastBuild() != null) {
-					if (job.isBuildable()) {
+					if (!job.isBuildable()) {
 						// job is unactivated
 						json += "\"status\": null";
 					} else if (job.getLastBuild().isBuilding()) {
