@@ -85,6 +85,9 @@ public class JsonResultView extends ListView {
 				if (job.isInQueue()) {
 					json += "\"queue\" : \"true\",";
 				}
+
+				// url
+				json += "\"url\": \"" + job.getAbsoluteUrl().toString() + "\",";
 				
 				// status and count
 				if (job.getLastBuild() != null) {
