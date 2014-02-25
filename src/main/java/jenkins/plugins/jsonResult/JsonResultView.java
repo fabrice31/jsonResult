@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.regex.*;
+import java.util.Date;
 import org.apache.commons.collections.CollectionUtils;
 
 public class JsonResultView extends ListView {
@@ -87,6 +88,9 @@ public class JsonResultView extends ListView {
 				
 				// status and count
 				if (job.getLastBuild() != null) {
+					// date last build
+					json += "\"date\" : \"" + job.getLastBuild().getTime().toString() + "\",";
+
 					if (!job.isBuildable()) {
 						// job is unactivated
 						json += "\"status\": null";
